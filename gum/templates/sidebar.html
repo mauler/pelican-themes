@@ -29,13 +29,13 @@
 {% endif %}
 
 
-<h4>Tags</h4>
 {% if tags %}
+  <h4>Tags</h4>
 	<ul>
-	{% for tag in tag_cloud %}
-	    <li class="tag-{{ tag.1 }}"><a href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0|e }}</a></li>
-	{% endfor %}
-</ul>
+  	{% for tag in tag_cloud %}
+  	    <li class="tag-{{ tag.1 }}"><a href="{{ SITEURL }}/{{ tag.0.url }}">{{ tag.0|e }}</a></li>
+  	{% endfor %}
+  </ul>
 {% endif %}
 
 
@@ -49,5 +49,18 @@
   </ul>
 </nav>
 {% endif %}
+
+
+{% if LINKS %}
+<nav class="widget">
+  <h4>Links</h4>
+  <ul>
+  {% for name, url in LINKS %}
+    <li><a href="{{ url|e }}">{{ name }}</a></li>
+  {% endfor %}
+  </ul>
+</nav>
+{% endif %}
+
 
 </div>
